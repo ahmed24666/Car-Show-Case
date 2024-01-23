@@ -8,9 +8,10 @@ import { CustomFilterProps } from "@/types";
 const CustomFilter = ({ title, options }: CustomFilterProps) => {
   const [selected, setSelected] = useState(options[0]);
   const router = useRouter();
-  const handleUpdateParams = (e:{type: string, value: string}) => {
+
+  const handleUpdateParams = (e: { type: string; value: string }) => {
     const searchParams = new URLSearchParams(window.location.search);
-    searchParams.set(e.type, e.value)
+    searchParams.set(e.type, e.value.toLowerCase());
     const newPathName =
       window.location.pathname + "?" + searchParams.toString();
     router.push(newPathName);
@@ -60,19 +61,6 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
                       >
                         {option.title}
                       </span>
-                      {selected ? (
-                        <span
-                          className={`absolute inset-y-0 left-0 flex items-center pl-3`}
-                        >
-                          <Image
-                            src="/check.svg"
-                            width={20}
-                            height={20}
-                            className="object-contain"
-                            alt="check"
-                          />
-                        </span>
-                      ) : null}
                     </>
                   )}
                 </Listbox.Option>

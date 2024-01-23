@@ -7,4 +7,16 @@ import CustomFilter from "./CustomFilter";
 import SearchManufacturer from "./SearchManufacturer";
 import CarCard from "./CarCard";
 import CarDetails from "./CarDetails";
-export { Hero , CustomBtn, Footer, Navbar, SearchBar, CustomFilter,CarCard, SearchManufacturer, CarDetails};
+import ShowMore from "./ShowMore";
+export {
+  Hero,
+  CustomBtn,
+  Footer,
+  Navbar,
+  SearchBar,
+  CustomFilter,
+  CarCard,
+  SearchManufacturer,
+  CarDetails,
+  ShowMore
+};
